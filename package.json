@@ -1,0 +1,29 @@
+{
+  "name": "desktop-application",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "browserslist": [
+    "electron 29.0"
+  ],
+  "dependencies": {
+    "@babel/core": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
+    "@babel/preset-react": "^7.23.3",
+    "@babel/preset-typescript": "^7.23.3",
+    "@babel/register": "^7.23.7",
+    "electron": "^29.0.0",
+    "mysql2": "^3.9.1",
+    "react-router-dom-v5-compat": "^6.22.1",
+    "react-simplified": "^4.0.2"
+  },
+  "devDependencies": {
+    "@types/react-dom": "^18.2.19",
+    "@types/react-router-dom": "^5.3.3",
+    "chokidar": "^3.6.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3"
+  }
+}
