@@ -1,3 +1,4 @@
+//DATABASEKOBLINGSOPPSETT henter fra Namox serveren til NTNU med egen bruker
 import mysql from 'mysql2';
 
 // Create a cache of connections to the mysql server.
@@ -5,7 +6,7 @@ import mysql from 'mysql2';
 export let pool = mysql.createPool({
   host: 'namox.idi.ntnu.no',
   connectionLimit: 1, // Limit the number of simultaneous connections to avoid overloading the mysql server
-  user: 'username', // Replace "username" with your namox.idi.ntnu.no username
-  password: 'password', // Replae "password" with your namox.idi.ntnu.no password
-  database: 'username', // Replace "username" with your namox.idi.ntnu.no username
+  user: 'sebaseb', // Replace "username" with your mysql-ait.stud.idi.ntnu.no username
+  password: 'lP1H9aht', // Replae "password" with your mysql-ait.stud.idi.ntnu.no password
+  database: 'sebaseb', // Replace "username" with your mysql-ait.stud.idi.ntnu.no username
 });
