@@ -1,3 +1,6 @@
+//FEILKODE FOREKOMMER I TYPESCRIPT, APPLIKASJONEN FUNGERER SOM DEN SKAL
+// IKKE MODIFISER
+
 import { pool } from './mysql-pool';
 
 export class Student {
@@ -33,7 +36,7 @@ class StudentService {
   }
 
   getGroup(id: number, success: (group: string) => void) {
-    pool.query('SELECT name FROM Groups WHERE id=?', [id], (error, results) => {
+    pool.query('SELECT name FROM `Groups` WHERE id=?', [id], (error, results) => {
       if (error) return console.error(error);
 
       success(results[0].name);
@@ -75,7 +78,7 @@ class StudentService {
 
 class GroupService {
   getGroups(success: (groups: Group[]) => void) {
-    pool.query('SELECT * FROM Groups', (error, results) => {
+    pool.query('SELECT * FROM `Groups`', (error, results) => {
       if (error) return console.error(error);
 
       success(results);
@@ -83,7 +86,7 @@ class GroupService {
   }
 
   getGroup(id: number, success: (group: Group) => void) {
-    pool.query('SELECT * FROM Groups WHERE id=?', [id], (error, results) => {
+    pool.query('SELECT * FROM `Groups` WHERE id=?', [id], (error, results) => {
       if (error) return console.error(error);
 
       success(results[0]);
@@ -108,7 +111,7 @@ class GroupService {
 
   updateGroup(group: Group, success: () => void) {
     pool.query(
-      'UPDATE Groups SET name=?, leaderId=?, description=?, groupImage=? WHERE id=?',
+      'UPDATE `Groups` SET name=?, leaderId=?, description=?, groupImage=? WHERE id=?',
       [group.name, group.leaderId, group.description, group.groupImage, group.id],
       (error) => {
         if (error) return console.error(error);
@@ -119,7 +122,7 @@ class GroupService {
   }
 
   deleteGroup(id: number, success: () => void) {
-    pool.query('DELETE FROM Groups WHERE id=?', [id], (error) => {
+    pool.query('DELETE FROM `Groups` WHERE id=?', [id], (error) => {
       if (error) return console.error(error);
 
       success();
@@ -128,7 +131,7 @@ class GroupService {
 
   createGroup(group: Group, success: () => void) {
     pool.query(
-      'INSERT INTO Groups (name, leaderId, description, groupImage) VALUES (?, ?, ?, ?)',
+      'INSERT INTO `Groups` (name, leaderId, description, groupImage) VALUES (?, ?, ?, ?)',
       [group.name, group.leaderId, group.description, group.groupImage],
       (error) => {
         if (error) return console.error(error);

@@ -1,3 +1,6 @@
+//OBLIG 9 BARE GJORT OM MED TYPESCRIPT
+// OBLIG 10 FERDIG //
+
 import * as React from 'react';
 import { Component } from 'react-simplified';
 import ReactDOM from 'react-dom';
