@@ -86,7 +86,7 @@ class GroupService {
   }
 
   getGroup(id: number, success: (group: Group) => void) {
-    pool.query('SELECT * FROM `Groups` WHERE id=?', [id], (error, results) => {
+    pool.query('SELECT * FROM `Groups` WHERE id=?', [id], (error: Error, results) => {
       if (error) return console.error(error);
 
       success(results[0]);
@@ -102,6 +102,7 @@ class GroupService {
   }
 
   getLeader(id: number, success: (leaderId: string) => void) {
+    // Finn typen til error og results for eksamen
     pool.query('SELECT * FROM Students WHERE id=?', [id], (error, results) => {
       if (error) return console.error(error);
 
